@@ -9,6 +9,14 @@ insert_final_newline = true
 max_line_length = 100
 trim_trailing_whitespace = true
 
-[*.{markdown,md}]
+[*.{COMMIT_EDITMSG,LICENSE,md}]
 max_line_length = 0
+
+[*.{md,toml}]
+indent_style = space
+
+[*.{markdown,md}]
 trim_trailing_whitespace = false
+
+[LICENSE]
+insert_final_newline = false
