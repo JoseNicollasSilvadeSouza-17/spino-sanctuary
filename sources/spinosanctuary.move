@@ -12,9 +12,21 @@ module spinosanctuary::spinosanctuary {
 	use std::vector;
 	use std::string::{Self, String};
 
+	// Valores de saúde (0 = morto, 100 = saudável, 150 = bônus)
+	const SAUDE_MINIMA: u8 = 0;
+	const SAUDE_NORMAL: u8 = 100;
+	const SAUDE_MAXIMA_BONUS: u8 = 150;
+
+	// Valores de fome (0 = sem fome, 100 = faminto, 150 = morrendo de fome)
+	const FOME_MINIMA: u8 = 0;
+	const FOME_NORMAL: u8 = 100;
+	const FOME_MAXIMA_CRITICA: u8 = 150;
+
 	// Código de Erro:
 	const E_HABITAT_CHEIO: u64 = 1;
 	const E_TIPO_INCOMPATIVEL: u64 = 2; 
+	const E_SAUDE_INVALIDA: u64 = 3;
+	const E_FOME_INVALIDA: u64 = 4;
 
 	// Struct:
 	public struct Spinosaurus has key, store {
@@ -62,6 +74,9 @@ module spinosanctuary::spinosanctuary {
 	}
 
 	public fun atualizar_spino(habitat: &mut Habitat, nova_saude: u8, nova_fome: u8) {
+		assert!(nova_saude >= SAUDE_MINIMA && nova_saude <= SAUDE_MAXIMA_BONUS, E_SAUDE_INVALIDA);
+		assert!(nova_fome >= FOME_MINIMA && nova_fome <= FOME_MAXIMA_CRITICA, E_FOME_INVALIDA);
+
 		let mut i = 0;
 		let len = vector::length(&habitat.spinos);
 		while (i < len) {
