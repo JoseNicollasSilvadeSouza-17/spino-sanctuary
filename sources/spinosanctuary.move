@@ -15,7 +15,7 @@ module spinosanctuary::spinosanctuary {
 	public struct Spinosaurus has key, store {
 		id: UID,
 		nome: String,
-		versao: u16,
+		versao: String,
 		tipo: String,
 		saude: u8,
 		fome: u8,
@@ -41,11 +41,11 @@ module spinosanctuary::spinosanctuary {
 
 	public fun criar_spino(
 		nome: vector<u8>,
-		versao: u16,
+		versao: vector<u8>,
 		tipo: vector<u8>,
 		ctx: &mut TxContext,
 	) {
-		let spino = Spinosaurus { id: object::new(ctx), nome: string::utf8(nome), versao, tipo: string::utf8(tipo), saude: 100, fome: 0 };
+		let spino = Spinosaurus { id: object::new(ctx), nome: string::utf8(nome), versao: string::utf8(versao), tipo: string::utf8(tipo), saude: 100, fome: 0 };
 		transfer::transfer(spino, tx_context::sender(ctx));
 	}
 
@@ -66,7 +66,7 @@ module spinosanctuary::spinosanctuary {
 		}
 	}
 
-	public fun get_spino_info(spino: &Spinosaurus): (String, u16, String, u8, u8) {
+	public fun get_spino_info(spino: &Spinosaurus): (String, String, String, u8, u8) {
 		(spino.nome, spino.versao, spino.tipo, spino.saude, spino.fome)
 	}
 
