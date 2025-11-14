@@ -12,6 +12,11 @@ module spinosanctuary::spinosanctuary {
 	use std::vector;
 	use std::string::{Self, String};
 
+	// Código de Erro:
+	const E_HABITAT_CHEIO: u64 = 1;
+	const E_TIPO_INCOMPATIVEL: u64 = 2; 
+
+	// Struct:
 	public struct Spinosaurus has key, store {
 		id: UID,
 		nome: String,
@@ -29,6 +34,7 @@ module spinosanctuary::spinosanctuary {
 		spinos: vector<Spinosaurus>,
 	}
 
+	// Funções:
 	public entry fun criar_habitat(
 		nome: vector<u8>,
 		tipo: vector<u8>,
@@ -50,8 +56,8 @@ module spinosanctuary::spinosanctuary {
 	}
 
 	public fun adicionar_spino(habitat: &mut Habitat, spino: Spinosaurus) {
-		assert!(vector::length(&habitat.spinos) < (habitat.capacidade as u64), 1);
-		assert!(habitat.tipo == spino.tipo, 2);
+		assert!(vector::length(&habitat.spinos) < (habitat.capacidade as u64), E_HABITAT_CHEIO);
+		assert!(habitat.tipo == spino.tipo, E_TIPO_INCOMPATIVEL);
 		vector::push_back(&mut habitat.spinos, spino);
 	}
 
