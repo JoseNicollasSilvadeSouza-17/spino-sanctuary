@@ -1,13 +1,12 @@
-![Logo SpinoSanctuary](https://i.ibb.co/9M3QS2r/logo-spinosanctuary.png)
+![SpinoSanctuary](https://i.ibb.co/9M3QS2r/logo-spinosanctuary.png)
 
-<!-- Badges -->
+![Move](https://img.shields.io/badge/move-sui?style=for-the-badge&logo=sui&logoColor=white&color=4da2ff)
 
-> [README Português 🇧🇷](../README.md)  
-> [README Español 🇪🇸](README_es.md)
+🇺🇸 English | [🇪🇸 Español](README_es.md) | [🇧🇷 Português](../README.md)
 
-The **SpinoSanctuary** project is an Spinosaurus Sanctuary made using the **Move** programming language on the **Sui** blockchain for the Sui Move Brazil Bootcamp held in November (03 to 17).
+The **SpinoSanctuary** project is an Spinosauridae Sanctuary made using the **Move** programming language on the **Sui** blockchain for the Sui Move Brazil Bootcamp held in November (03 to 17).
 
-The motivation for the project arose from my passion for Spinosaurus and the theme of zoos and sanctuaries. I found the idea of creating a sanctuary in the Web3 world fascinating, where the user can choose their favorite version of Spinosaurus (or close relatives) and take care of it virtually.
+The motivation for the project arose from my passion for Spinosauridae0 and the theme of zoos and sanctuaries. I found the idea of creating a sanctuary in the Web3 world fascinating, where the user can choose their favorite version of Spinosauridae and take care of it virtually.
 
 ## Installation:
 
@@ -19,4 +18,4 @@ mvr add @pkg/spinosanctuary
 
 ## License:
 
-[License MIT](../LICENSE)
+This project is licensed under the [MIT License](https://opensource.org/license/mit) - see the [LICENSE](../LICENSE) file for details.
