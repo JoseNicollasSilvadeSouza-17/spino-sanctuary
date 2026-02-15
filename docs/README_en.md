@@ -1,7 +1,7 @@
 ![SpinoSanctuary](https://i.ibb.co/9M3QS2r/logo-spinosanctuary.png)
 
 ![Move](https://img.shields.io/badge/move-sui?style=for-the-badge&logo=sui&logoColor=white&color=4da2ff)
-![Sui](https://img.shields.io/badge/sui-move?style=for-the-badge&logo=sui&logoColor=white&color=%234da2ff)
+[![Sui](https://img.shields.io/badge/sui-move?style=for-the-badge&logo=sui&logoColor=white&color=%234da2ff)](https://www.sui.io/)
 
 🇺🇸 English | [🇪🇸 Español](README_es.md) | [🇧🇷 Português](../README.md)
 
